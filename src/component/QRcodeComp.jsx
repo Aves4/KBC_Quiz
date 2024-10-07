@@ -2,7 +2,7 @@ import React from "react";
 import QRcode from "react-qr-code";
 import { Link } from "react-router-dom";
 const QRcodeComp = () => {
-  const gamePage = "http://localhost:5174/mobilescreen"; //not a permanent url
+  const gamePage = "https://kbc-quiz-eight.vercel.app/mobilescreen"; //not a permanent url
   return (
     <div className="homescreen-container">
       <div className="qr-container">

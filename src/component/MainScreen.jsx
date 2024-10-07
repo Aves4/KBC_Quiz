@@ -4,67 +4,31 @@ import { useState, useRef } from "react";
 import { GameContext } from "./Context";
 import styles from "./MainScreen.module.css";
 
-// export const questions = [
-//   {
-//     question: "What is React",
-//     options: ["A Library", "A Framework", "A Language", "A Machine"],
-//     answer: "A Library",
-//   },
-//   {
-//     question: "What is JSX",
-//     options: ["A Libary", "A Framework", "JavaScript XML", "A Machine"],
-//     answer: "JavaScript XML",
-//   },
-//   {
-//     question: "What is Enemy?",
-//     options: ["A Library", "A Framework", "A Language", "A Machine"],
-//     answer: "A Language",
-//   },
-// ];
 const MainScreen = () => {
   const {
     playerName,
     setPlayerName,
     currentIndex,
-    setCurrentIndex,
+
     questions,
     selectedOption,
     isGameOver,
     validateAnswer,
     setSelectedOption,
     message,
-    setMessage,
+    handlePlayAgain,
     questionNumber,
-    setQuestionNumber,
-    correctCount,
-    setCorrectCount,
-  } = useContext(GameContext);
-  // const [playerName, setPlayerName] = useState("");
-  // const [currentIndex, setCurrentIndex] = useState(0);
-  // const currentQuestion = questions[currentIndex];
-  // const [selectedOption, setSelectedOption] = useState("");
-  // const [message, setMessage] = useState("");
 
-  // const isGameOver = currentIndex >= questions.length;
-  // const validateAnswer = () => {
-  //   const correctAnswer = selectedOption === questions[currentIndex].answer;
-  //   if (correctAnswer) {
-  //     setMessage(`Congratulations. ${playerName} Your Answer is Correct`);
-  //     setTimeout(() => {
-  //       setCurrentIndex(currentIndex + 1);
-  //       setSelectedOption("");
-  //       setMessage("");
-  //     }, 2000);
-  //   } else {
-  //     setMessage("Incorrect Answer!");
-  //   }
-  // };
+    correctCount,
+  } = useContext(GameContext);
+
   const currentQuestion = questions[currentIndex];
 
   const nameRef = useRef();
   const handleNameSubmit = () => {
     setPlayerName(nameRef.current.value);
   };
+
   return (
     <div>
       <Link to="/">Go Back</Link>
@@ -76,6 +40,9 @@ const MainScreen = () => {
         <div className={styles.messageContainer}>
           <h2>You Answered {correctCount} out of 5 Questions</h2>
           <h2>Thank You for Participating</h2>
+          <div>
+            <button onClick={handlePlayAgain}>Play Again</button>
+          </div>
         </div>
       ) : !playerName ? (
         <div className={styles.container}>

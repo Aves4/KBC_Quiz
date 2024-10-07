@@ -5,19 +5,55 @@ export const GameContext = createContext();
 export const GameContextProvider = ({ children }) => {
   const questions = [
     {
-      question: "What is React",
-      options: ["A Library", "A Framework", "A Language", "A Machine"],
-      answer: "A Library",
+      question: "What is the purpose of React's useEffect hook?",
+      options: [
+        "To directly update the DOM",
+        "To manage side effects in a functional component",
+        "To define a component's state",
+        "To create reusable component logic",
+      ],
+      answer: "To manage side effects in a functional component",
     },
     {
-      question: "What is JSX",
-      options: ["A Libary", "A Framework", "JavaScript XML", "A Machine"],
-      answer: "JavaScript XML",
+      question: "Which of the following is NOT a feature of React?",
+      options: [
+        "Virtual DOM",
+        " Two-way data binding",
+        "JSX",
+        "Component-based architecture",
+      ],
+      answer: " Two-way data binding",
     },
     {
-      question: "What is Enemy?",
-      options: ["A Library", "A Framework", "A Language", "A Machine"],
-      answer: "A Language",
+      question:
+        "How do you pass data from a parent component to a child component in React?",
+      options: [
+        "Using state",
+        "Using props",
+        "Using context",
+        "Using useEffect",
+      ],
+      answer: "Using props",
+    },
+    {
+      question: "What does React's setState function do?",
+      options: [
+        "It directly modifies the state object",
+        "It replaces the component's current state with a new one",
+        "It schedules an update to the components state object",
+        "It re-renders the entire DOM",
+      ],
+      answer: "It schedules an update to the components state object",
+    },
+    {
+      question: "What is the default value of a newly created useState hook?",
+      options: [
+        "null",
+        "undefined",
+        "The initial value passed to useState",
+        "0",
+      ],
+      answer: "The initial value passed to useState",
     },
   ];
 
@@ -41,9 +77,12 @@ export const GameContextProvider = ({ children }) => {
       setQuestionNumber(questionNumber + 1);
       setSelectedOption("");
       setMessage("");
-    }, 2000);
+    }, 1000);
   };
-
+  const handlePlayAgain = () => {
+    setCurrentIndex(0);
+    setPlayerName("");
+  };
   return (
     <GameContext.Provider
       value={{
@@ -62,6 +101,7 @@ export const GameContextProvider = ({ children }) => {
         setQuestionNumber,
         correctCount,
         setCorrectCount,
+        handlePlayAgain,
       }}
     >
       {children}

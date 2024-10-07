@@ -2,7 +2,7 @@ import React from "react";
 import QRcode from "react-qr-code";
 import { Link } from "react-router-dom";
 const QRcodeComp = () => {
-  const gamePage = "https://kbc-quiz-eight.vercel.app/mobilescreen"; //not a permanent url
+  const gamePage = "https://kbc-quiz-eight.vercel.app/mobilescreen";
   return (
     <div className="homescreen-container">
       <div className="qr-container">
@@ -12,10 +12,6 @@ const QRcodeComp = () => {
       <h3>OR</h3>
       <Link to="/mainscreen">
         <button className="start-btn">Start Quiz on Desktop</button>
-      </Link>
-
-      <Link to="/mobilescreen">
-        <button className="start-btn">Start Quiz on MObile</button>
       </Link>
     </div>
   );

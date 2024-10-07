@@ -7,18 +7,17 @@ const MobileScreen = () => {
     playerName,
     setPlayerName,
     currentIndex,
-    setCurrentIndex,
+
     questions,
     selectedOption,
     isGameOver,
     validateAnswer,
     setSelectedOption,
     message,
-    setMessage,
+    handlePlayAgain,
     questionNumber,
-    setQuestionNumber,
+
     correctCount,
-    setCorrectCount,
   } = useContext(GameContext);
   const currentQuestion = questions[currentIndex];
 
@@ -37,6 +36,9 @@ const MobileScreen = () => {
         <div classname={styles.messageContainer}>
           <h2>You Answered {correctCount} out of 5 Questions</h2>
           <h2>Thank You for Participating</h2>
+          <div>
+            <button onClick={handlePlayAgain}>Play Again</button>
+          </div>
         </div>
       ) : !playerName ? (
         <div className={styles.container}>

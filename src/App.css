@@ -16,13 +16,15 @@ body {
 }
 
 .title {
-  background-color: yellowgreen;
   text-align: center;
   margin: auto;
   border-radius: 15px;
-  width: 200px;
+  font-weight: 300;
   padding: 10px;
-  color: white;
+  font-size: 60px;
+  width: 30%;
+
+  color: rgb(24, 29, 121);
 }
 
 .start-btn {

@@ -27,7 +27,6 @@ const MobileScreen = () => {
   };
   return (
     <div>
-      <Link to="/">Go Back</Link>
       {playerName && !isGameOver && (
         <h3 className={styles.playerName}>Player Name: {playerName}.</h3>
       )}

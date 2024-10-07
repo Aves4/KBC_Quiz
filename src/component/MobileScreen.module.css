@@ -53,10 +53,3 @@ button {
 h3 {
   padding-left: 30px;
 }
-
-.messageContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

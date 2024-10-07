@@ -13,6 +13,8 @@ const QRcodeComp = () => {
       <Link to="/mainscreen">
         <button className="start-btn">Start Quiz on Desktop</button>
       </Link>
+
+      <Link to="/mobilescreen">PLay Mobile</Link>
     </div>
   );
 };

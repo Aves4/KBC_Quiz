@@ -66,22 +66,27 @@ export const GameContextProvider = ({ children }) => {
   const isGameOver = currentIndex >= questions.length;
   const validateAnswer = () => {
     const correctAnswer = selectedOption === questions[currentIndex].answer;
-    if (correctAnswer) {
+    if (correctAnswer && selectedOption !== "") {
       setMessage(`Congratulations. ${playerName} Your Answer is Correct`);
       setCorrectCount(correctCount + 1);
+    } else if (selectedOption === "") {
+      setMessage("Please choose any one option from above");
     } else {
       setMessage("Incorrect Answer!");
     }
-    setTimeout(() => {
-      setCurrentIndex(currentIndex + 1);
-      setQuestionNumber(questionNumber + 1);
-      setSelectedOption("");
-      setMessage("");
-    }, 1000);
+    selectedOption !== "" &&
+      setTimeout(() => {
+        setCurrentIndex(currentIndex + 1);
+        setQuestionNumber(questionNumber + 1);
+        setSelectedOption("");
+        setMessage("");
+      }, 1000);
   };
   const handlePlayAgain = () => {
     setCurrentIndex(0);
     setPlayerName("");
+    setQuestionNumber(1);
+    setCorrectCount(0);
   };
   return (
     <GameContext.Provider

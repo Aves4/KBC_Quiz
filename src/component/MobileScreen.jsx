@@ -28,11 +28,18 @@ const MobileScreen = () => {
   return (
     <div>
       {playerName && !isGameOver && (
-        <h3 className={styles.playerName}>Player Name: {playerName}.</h3>
+        <h3 className={styles.playerName}>Player Name: {playerName}</h3>
       )}
 
       {isGameOver ? (
-        <div classname={styles.messageContainer}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <h2>You Answered {correctCount} out of 5 Questions</h2>
           <h2>Thank You for Participating</h2>
           <div>

@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <QRcodeComp />,
       },
       {
-        path: "/mainscreen",
+        path: "mainscreen",
         element: <MainScreen />,
       },
       {

@@ -1,6 +1,5 @@
 import { React, useContext, useRef } from "react";
 import { GameContext } from "./Context";
-import { Link } from "react-router-dom";
 import styles from "./MobileScreen.module.css";
 const MobileScreen = () => {
   const {

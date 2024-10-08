@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { GameContext } from "./Context";
 import styles from "./MainScreen.module.css";
 

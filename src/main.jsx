@@ -5,7 +5,7 @@ import QRcodeComp from "./component/QRcodeComp.jsx";
 
 import MainScreen from "./component/MainScreen.jsx";
 import MobileScreen from "./component/MobileScreen.jsx";
-import { GameContextProvider } from "./component/Context.jsx";
+import { GameContextProvider } from "./store/Context.jsx";
 
 const router = createBrowserRouter([
   {

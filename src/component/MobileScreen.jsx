@@ -1,5 +1,5 @@
 import { React, useContext, useRef } from "react";
-import { GameContext } from "./Context";
+import { GameContext } from "../store/Context";
 import styles from "./MobileScreen.module.css";
 const MobileScreen = () => {
   const {
@@ -39,7 +39,7 @@ const MobileScreen = () => {
             alignItems: "center",
           }}
         >
-          <h2>You Answered {correctCount} out of 5 Questions</h2>
+          <h2>{correctCount} answers correct out of 5 Questions</h2>
           <h2>Thank You for Participating</h2>
           <div>
             <button onClick={handlePlayAgain}>Play Again</button>

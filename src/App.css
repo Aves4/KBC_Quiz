@@ -34,3 +34,22 @@ body {
   border: none;
   background-color: rgba(67, 223, 24, 0.912);
 }
+
+.options-container {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.options-container div {
+  margin-bottom: 10px;
+}
+
+.options-container input[type="radio"] {
+  margin-right: 10px;
+}
+
+.each-option {
+  margin: 10px;
+}
